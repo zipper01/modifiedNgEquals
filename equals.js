@@ -22,12 +22,10 @@ function _$equals(o1, o2, _$arr) {
       }
     } else if (isDate(o1)) {
       if (!isDate(o2)) return false;
-      var res = simpleCompare(o1.getTime(), o2.getTime());
-      return res;
+      return simpleCompare(o1.getTime(), o2.getTime());
     } else if (isRegExp(o1)) {
       if (!isRegExp(o2)) return false;
-      var res = o1.toString() === o2.toString();
-      return res;
+      return o1.toString() === o2.toString();
     } else {
       if (isScope(o1) || isScope(o2) || isWindow(o1) || isWindow(o2) ||
         isArray(o2) || isDate(o2) || isRegExp(o2)) return false;
